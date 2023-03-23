@@ -50,6 +50,7 @@ public class AdapterItem extends RecyclerView.Adapter<AdapterItem.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        String id_producto;
         Context context;
         TextView nombreproducto,maximos,minimos,total;
         ImageButton max_min;
@@ -65,7 +66,10 @@ public class AdapterItem extends RecyclerView.Adapter<AdapterItem.ViewHolder> {
             max_min.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    context.startActivity(new Intent(context, DataProducto.class));
+                    Intent intent = new Intent(context, DataProducto.class);
+                    intent.putExtra("id_producto",id_producto);
+                    Log.d("adaptador",id_producto);
+                    context.startActivity(intent);
                 }
             });
         }
@@ -75,6 +79,8 @@ public class AdapterItem extends RecyclerView.Adapter<AdapterItem.ViewHolder> {
             maximos.setText(""+p.getMaximo());
             minimos.setText((""+p.getMinimo()));
             total.setText(""+p.getTotal());
+            id_producto = p.getId_producto();
+            Log.d("adapter dentro",p.getId_producto());
         }
     }
 }

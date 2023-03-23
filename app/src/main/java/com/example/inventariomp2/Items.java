@@ -66,7 +66,7 @@ public class Items extends AppCompatActivity {
                         help.setCantidad(jsonObject.getInt("cantidad"));
                         help.setMaximo(jsonObject.getInt("maximo"));
                         help.setMinimo(jsonObject.getInt("minimo"));
-                        help.setId_producto("");
+                        help.setId_producto(jsonObject.getString("id_producto"));
                         help.setBodega("");
                         help.setTotal(jsonObject.getInt("cantidad"));
                         help.setUbicacion("");
