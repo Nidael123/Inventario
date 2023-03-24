@@ -116,7 +116,7 @@ public class Login extends AppCompatActivity {
                         }
                         editor.putInt("cant_depart", jsonArray.length()-1);
                         editor.commit();
-                        Toast.makeText(Login.this,"Ingreso con Exitoso",Toast.LENGTH_SHORT);
+                        Toast.makeText(Login.this,"Ingreso con Exitoso",Toast.LENGTH_SHORT).show();
                         Log.d("logeo",""+help.length);
                         startActivity(new Intent(Login.this,Menu.class));
                     }
